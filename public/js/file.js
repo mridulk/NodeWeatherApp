@@ -10,7 +10,7 @@ weather.addEventListener('submit',(e)=>{
     p1.textContent='Loading ...'
     p2.textContent=''
     p3.textContent=''
-    fetch('http://localhost:3000/weather?address='+addressValue).then((response)=>{
+    fetch('/weather?address='+addressValue).then((response)=>{
     response.json().then((data)=>{
         if(data.error){
            p1.textContent='Error :'+data.error

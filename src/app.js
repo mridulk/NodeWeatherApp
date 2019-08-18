@@ -4,6 +4,7 @@ const hbs=require('hbs')
 const forecast=require('./forecast.js')
 const geocode=require('./geocode.js')
 const app=express()
+const port=process.env.PORT || 3000
 const viewPath=path.join(__dirname,'../views')
 const filepath=path.join(__dirname,'../public')
 const partialPath=path.join(__dirname,'../partials')
@@ -82,6 +83,6 @@ app.get('*',(req,res)=>{
         errorMessage:'Page Not Found'
     })
 })
-app.listen(3000,()=>{
-    console.log('Page Successfully Loaded')
+app.listen(port,()=>{
+    console.log('Page Successfully Loaded' + port)
 })
